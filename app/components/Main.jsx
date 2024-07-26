@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 const Main = () => {
-  const [city, setCity] = React.useState('القاهرة');
+  const [city, setCity] = React.useState('Cairo');
   const [data, setData] = React.useState("17 محرم 1446")
   const [datetwo , setDatatwo] = React.useState("25 اكتوبر 2024")
   const [timings, setTimings] = React.useState({
@@ -209,7 +209,7 @@ const Main = () => {
       <div className='container mx-auto'>
         <span className='font-bold tracking-[.3rem] text-5xl text-accent font-sans flex items-center justify-center mb-12'>مواقيت الصلوات</span>
         {/* top program */}
-        <div className='top_program grid grid-cols-4 border-b-[1px] border-[#d9d9d947] pb-8'>
+        <div className='top_program grid grid-cols-3 border-b-[1px] border-[#d9d9d947] pb-8'>
           <div className='flex flex-col items-center gap-1'>
             <span className='text-3xl font-bold text-white font-sans'>{data}</span>
             <span className='text-3xl font-bold text-accent'>{datetwo}</span>
@@ -223,26 +223,6 @@ const Main = () => {
             <span className='text-3xl font-bold text-accent'>
               {
                 time
-              }
-            </span>
-          </div>
-          <div className='flex flex-col items-start gap-1'>
-            <span className='text-3xl font-bold text-white font-primary'>
-              {
-                time >= timings.Fajr  ? <span className='text-3xl font-bold '>متبقي حتي صلاة الظهر</span> 
-                  : time >= timings.Dhuhr ? <span className='text-3xl font-bold'>متبقي حتي صلاة العصر</span>
-                    : time >= timings.Asr  ? <span className='text-3xl font-bold'>متبقي حتي صلاة المغرب</span>
-                      : time >= timings.Maghrib ? <span className='text-3xl font-bold '>متبقي حتي صلاة العشاء</span>
-                        : <span className='text-3xl font-bold'>متبقي حتي صلاة الفجر</span>
-              }
-            </span>
-            <span className='text-3xl font-bold text-accent tracking-[0.2em]'>
-              {
-                time >= timings.Fajr ? <span className='text-3xl font-bold text-accent'>{subtractTimes(timings.Dhuhr, time)}</span>
-                  : time >= timings.Dhuhr ? <span className='text-3xl font-bold text-accent'>{subtractTimes(timings.Asr, time)}</span>
-                    : time >= timings.Asr ? <span className='text-3xl font-bold text-accent'>{subtractTimes(timings.Maghrib, time)}</span>
-                      : time >= timings.Maghrib ? <span className='text-3xl font-bold text-accent'>{subtractTimes(timings.Isha, time)}</span>
-                        : <span className='text-3xl font-bold text-accent'>{subtractTimes(timings.Fajr, time)}</span>
               }
             </span>
           </div>

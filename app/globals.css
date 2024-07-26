@@ -2,32 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  html {
+    @apply scroll-smooth bg-secondary font-aref
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.program{
+  direction: rtl;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.MuiSvgIcon-root{
+  font-size: 1.5rem;
+  color: #fca311;
+}
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused{
+  color: #fca311 !important;
+}
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+  border: 1px solid #fca311 !important;
 }

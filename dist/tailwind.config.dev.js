@@ -1,23 +1,20 @@
+"use strict";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
-  ],
+  content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}', './app/**/*.{js,jsx}', './src/**/*.{js,jsx}'],
   prefix: "",
   theme: {
     container: {
       center: true,
       padding: "15px",
       screens: {
-        "2xl": "1400px",
-      },
+        "2xl": "1400px"
+      }
     },
     fontFamily: {
-      aref : "var(--font-aref)"
+      aref: "var(--font-aref)"
     },
     extend: {
       colors: {
@@ -33,24 +30,32 @@ module.exports = {
           600: "#718096",
           700: "#4a5568",
           800: "#2d3748",
-          900: "#1a202c",
+          900: "#1a202c"
         }
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0"
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)"
+          }
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
+          from: {
+            height: "var(--radix-accordion-content-height)"
+          },
+          to: {
+            height: "0"
+          }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
+        "accordion-up": "accordion-up 0.2s ease-out"
+      }
+    }
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [require("tailwindcss-animate")]
+};

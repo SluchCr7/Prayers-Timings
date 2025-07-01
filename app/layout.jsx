@@ -1,5 +1,6 @@
 import { Inter , Aref_Ruqaa } from "next/font/google";
 import "./globals.css";
+import { PrayersContextProvider } from "./Context/PrayersCon";
 
 const Aref = Aref_Ruqaa({
   subsets: ["arabic"],
@@ -14,7 +15,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={Aref.variable}>{children}</body>
+      <body className={Aref.variable}>
+        <PrayersContextProvider>
+          {children}
+        </PrayersContextProvider>
+      </body>
     </html>
   );
 }

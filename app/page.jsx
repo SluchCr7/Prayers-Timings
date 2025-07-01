@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Maincom from "./components/Main";``
+import MainPage from "./components/MainPage";
 export default function Home() {
   return (
     <>
-      <Maincom />
+      <MainPage/>
     </>
   );
 }
